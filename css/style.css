@@ -59,6 +59,26 @@ strong {
     font-weight: var(--fw-bold)
 }
 
+/* Buttons */
+
+.btn {
+    display: inline-block;
+    padding: .5em 1.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
 /* Typography */
 
 h1,
@@ -146,5 +166,55 @@ h3 {
         position: relative;
         left: -1.5em;
         width: calc(100% + 1.5em);
+    }
+}
+
+/* My skills section */
+
+.my-skills {
+    background-color: var(--clr-dark);
+    background-image: url(../images/skills-bg.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__title--skills {
+    color: var(--clr-accent);
+    position: relative;
+}
+
+.section__title--skills::after {
+    content: '';
+    display: block;
+    width: 2em;
+    height: 1.3px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.25;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3em;
+    color: var(--clr-light);
+    opacity: 0.85;
+}
+
+.skills .fa-brands {
+    font-size: 2em;
+}
+
+@media (min-width: 800px) {
+    .skills .fa-brands {
+        font-size: 3em;
+    }
+
+    .skills__icons p {
+        font-size: var(--fs-h3);
     }
 }
