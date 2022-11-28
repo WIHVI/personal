@@ -22,8 +22,8 @@
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
 
-    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
-          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
+        0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
 }
 
 @media (min-width: 800px) {
@@ -123,6 +123,12 @@ h3 {
     font-family: var(--ff-secondary);
     padding: .25em 1em;
     margin-bottom: 1em;
+}
+
+.section__subtitle--work {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
 }
 
 /* Intro Section */
@@ -234,17 +240,17 @@ h3 {
     .about-me {
         display: grid;
         grid-template-columns: 1fr 200px;
-        grid-template-areas: 
+        grid-template-areas:
             "title img"
             "subtitle img"
             "text img";
         grid-column-gap: 2em;
     }
-    
+
     .section__title--about {
         grid-area: title;
     }
-    
+
     .section__subtitle--about {
         grid-column: 1 / -1;
         grid-row: 2;
@@ -254,10 +260,61 @@ h3 {
         padding-left: 1em;
         padding-right: calc(200px + 1.5em);
     }
-    
+
     .about-me__img {
         grid-area: img;
         position: relative;
         z-index: 2;
     }
+}
+
+/* My work section */
+
+.my-work {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+}
+
+.portfolio__item {
+    position: relative;
+    overflow: hidden;
+    border: .1px solid var(--clr-accent);
+}
+
+.portfolio__img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.portfolio__item:hover .portfolio__img {
+    opacity: .1;
+    transition: 0.3s;
+}
+
+.portfolio__item--overlay {
+    padding: 1em;
+    text-align: left;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+    transform: translateY(100%);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.portfolio__item--overlay a + a{
+    margin-left: 1em;
+
+}
+
+.portfolio__item:hover .portfolio__item--overlay {
+    transform: translate(0);
+    opacity: 1;
 }
