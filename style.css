@@ -347,6 +347,10 @@ h3 {
     border-radius: 1em;
 }
 
+.about-me__body p {
+    color: #c1bbff;
+}
+
 @media (min-width: 600px) {
     .about-me {
         display: grid;
