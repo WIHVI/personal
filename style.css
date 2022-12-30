@@ -381,7 +381,7 @@ h3 {
 
 .portfolio {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    grid-template-columns: repeat(3, minmax(360px, 1fr));
     grid-gap: 0.5em;
 }
 
@@ -406,7 +406,7 @@ h3 {
 }
 
 .portfolio__item--overlay {
-    padding: .5em;
+    padding: 1em;
     text-align: left;
     position: absolute;
     width: 100%;
@@ -432,6 +432,18 @@ h3 {
 .portfolio__item:hover .portfolio__item--overlay {
     transform: translate(0);
     opacity: 1;
+}
+
+@media (max-width: 1170px) {
+    .portfolio {
+        grid-template-columns: repeat(2, minmax(360px, 1fr));
+    }
+}
+
+@media (max-width: 800px) {
+    .portfolio {
+        grid-template-columns: repeat(1, minmax(320px, 1fr));
+    }
 }
 
 /* footer */
